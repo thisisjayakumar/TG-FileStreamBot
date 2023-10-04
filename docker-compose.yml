@@ -1,17 +1,17 @@
-version: "3.8"
+version: "3.3"
 
 services:
   fsb:
-      build: .
-      restart: unless-stopped
-      container_name: fsb
-      environment:
+    build: .
+    restart: unless-stopped
+    container_name: fsb
+    environment:
       # required
-       - API_ID=0 # change this to your ID
-       - API_HASH=e83e839202 # change this to your HASH
-       - BOT_TOKEN=token # enter your bot token
-       - BIN_CHANNEL=ID # paste channel ID
-      ports:
-       - 127.0.0.1:8000:8000
-      volumes:
-       - $HOME/TG-FileStreamBot:/app/.env
+      - API_ID=${API_ID}
+      - API_HASH=${API_HASH}
+      - BOT_TOKEN=${BOT_TOKEN}
+      - BIN_CHANNEL=${BIN_CHANNEL}
+    ports:
+      - 127.0.0.1:8000:8000
+    volumes:
+      - $HOME/TG-FileStreamBot:/app/.env
